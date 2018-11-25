@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginPackage xmlns="http://www.sdl.com/Plugins/PluginPackage/1.0">
+  <PlugInName>QuickInfo</PlugInName>
+  <Version>1.1</Version>
+  <Description>Provides various information like units conversion, math calculation, airport codes, Unicode description and more.</Description>
+  <Author>Romulus Crisan</Author>
+  <RequiredProduct name="SDLTradosStudio" minversion="15.0"/>
+  <Include>
+    <File>Newtonsoft.Json.dll</File>
+    <File>GuiLabs.MathParser.dll</File>
+    <File>Microsoft.Extensions.Caching.Abstractions.dll</File>
+    <File>Microsoft.Extensions.Caching.Memory.dll</File>
+    <File>Microsoft.Extensions.DependencyInjection.Abstractions.dll</File>
+    <File>Microsoft.Extensions.Options.dll</File>
+    <File>Microsoft.Extensions.Primitives.dll</File>
+    <File>Microsoft.Win32.Primitives.dll</File>
+    <File>QuickInfo.dll</File>
+    <File>UnicodeInformation.dll</File>
+  </Include>
+</PluginPackage>
