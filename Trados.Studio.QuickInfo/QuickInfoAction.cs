@@ -1,10 +1,5 @@
 ﻿using Sdl.TellMe.ProviderApi;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TradosStudioQuickInfo
@@ -17,6 +12,7 @@ namespace TradosStudioQuickInfo
         {
             this.Description = $"Results from {processorName}";
             this.Name = text;
+           
         }
 
         public string Name { get; set; } = "QuickInfo link";
@@ -25,7 +21,7 @@ namespace TradosStudioQuickInfo
 
         public string Description { get; set; } = "Opens a link returned in a quick info search";
 
-        public Icon Icon => PluginResources.info_1930258;
+        public Icon Icon { get; set; }
 
         public bool IsAvailable => true;
 

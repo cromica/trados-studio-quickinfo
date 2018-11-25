@@ -1,9 +1,7 @@
 ﻿using QuickInfo;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TradosStudioQuickInfo
 {
@@ -71,7 +69,11 @@ namespace TradosStudioQuickInfo
 
                 foreach (var row in node.List)
                 {
-                    yield return GenerateNodeRow(processorName, row);
+                    var actions = GenerateNodeRow(processorName, row);
+                    foreach (var action in actions)
+                    {
+                        yield return action;
+                    }
                 }
 
             } 
@@ -97,21 +99,32 @@ namespace TradosStudioQuickInfo
             }
         }
 
-        private QuickInfoAction GenerateNodeRow(string processorName, object row)
+        private IEnumerable<QuickInfoAction> GenerateNodeRow(string processorName, object row)
         {
             StringBuilder text = new StringBuilder();
-
             if (row is Node node)
             {
                 foreach (var cell in node.List)
                 {
-                    text.Append(GetText(cell as Node));
-                    text.Append(" ");
+                    var nodeCell = cell as Node;
+                    if (nodeCell.Style == "Color")
+                    {
+                        yield return new QuickInfoAction(processorName, nodeCell.Text);
+                    }
+                    else
+                    {
+                        if (nodeCell.Style != "ColorSwatchSmall")
+                        {
+                            text.Append(GetText(nodeCell));
+                            text.Append(" ");
+                            text.Remove(text.Length - 1, 1);
+                        }
+                    }
                 }
-                text.Remove(text.Length - 1, 1);
+
             }
 
-             return new QuickInfoAction(processorName, text.ToString());
+            yield return new QuickInfoAction(processorName, text.ToString());
         }
 
         private QuickInfoAction RenderText(string processorName, string text)
