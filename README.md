@@ -15,7 +15,7 @@ Trados Studio plugin which extends default Tell Me functionality to provde vario
    1. Volume
    1. Area: `1670 sq.ft`
    1. Fuel efficiency (`29mpg`)
-   1. Curency conversion. Following currencies are supported: EUR, USD, RUB, CZK, ILS, CAD, CHF, RON, AUD, PLN, HUF, JPY, CNY
+   1. Curency conversion. Following currencies are supported: EUR, USD, GBP, RUB, CZK, ILS, CAD, CHF, RON, AUD, PLN, HUF, JPY, CNY
 1. Hex/decimal (just type a number)
 1. List of colors: `color`, `colors`
 1. Color conversions - convert an RGB triplet to Hex color or hex color to RGB (`23 145 175`, `#eeaaf0`)
@@ -26,3 +26,5 @@ Trados Studio plugin which extends default Tell Me functionality to provde vario
 1. Quick sum/average/product of a list of numbers, sort a list (separated by space or comma) `3 7 21 3 3 2 11`
 1. Unicode: type a codepoint to see what char it is: `U+2021` `\u3333`
 1. Url decode: `2%20%2B%203` shows the original string (fun exercise: `2%2525252520%252525252B%25252525205`)
+
+This is based on the ![QuickInfo library](https://github.com/KirillOsenkov/QuickInfo).
