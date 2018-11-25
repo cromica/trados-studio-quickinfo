@@ -31,7 +31,8 @@ namespace TradosStudioQuickInfo
 
         public void Execute()
         {
-            Clipboard.SetText(Name);
+            if(!string.IsNullOrEmpty(Name))
+                Clipboard.SetText(Name);
         }
     }
 }

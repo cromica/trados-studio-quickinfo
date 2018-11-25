@@ -32,8 +32,8 @@ namespace TradosStudioQuickInfo
             else if (resultNode is string text)
 
             {
-
-                yield return RenderText(processorName, text);
+                if (!string.IsNullOrEmpty(text))
+                    yield return RenderText(processorName, text);
 
             }
 
@@ -74,14 +74,25 @@ namespace TradosStudioQuickInfo
                     yield return GenerateNodeRow(processorName, row);
                 }
 
-            }
+            } 
             else
-
             {
+                string text = string.Empty;
+                if (node.List != null && node.List.Count() > 0)
+                {
+                    var actions = GenerateList(processorName, node.List);
+                    foreach (var action in actions)
+                    {
+                        yield return action;
+                    }
+                }
+                else
+                {
+                     text = GetText(node);
+                }
 
-                var text = GetText(node);
-
-               yield return RenderText(processorName,text);
+                if (!string.IsNullOrEmpty(text))
+                    yield return RenderText(processorName,text);
 
             }
         }
