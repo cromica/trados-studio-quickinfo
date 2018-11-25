@@ -27,4 +27,4 @@ Trados Studio plugin which extends default Tell Me functionality to provde vario
 1. Unicode: type a codepoint to see what char it is: `U+2021` `\u3333`
 1. Url decode: `2%20%2B%203` shows the original string (fun exercise: `2%2525252520%252525252B%25252525205`)
 
-This is based on the ![QuickInfo library](https://github.com/KirillOsenkov/QuickInfo).
+This is based on the [QuickInfo library](https://github.com/KirillOsenkov/QuickInfo).
