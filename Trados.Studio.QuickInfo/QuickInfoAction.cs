@@ -8,6 +8,10 @@ namespace TradosStudioQuickInfo
     {
         private readonly object resultNode;
 
+        public QuickInfoAction()
+        {
+        }
+
         public QuickInfoAction(string processorName, string text)
         {
             this.Description = $"Results from {processorName}";
